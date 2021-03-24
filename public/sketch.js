@@ -6,7 +6,10 @@ function setup() {
   background('red');
 
   // FOUR
-  socket = io.connect('http://localhost:3000')
+  // socket = io.connect('http://localhost:3000')
+
+  // HEROKU ONLY
+  socket = io.connect('https://test-node-kat.herokuapp.com/')
 
   // FIVE
   // second parameter is a callback
