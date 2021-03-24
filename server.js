@@ -6,7 +6,12 @@ var express = require('express');
 
 // make an express application
 var app = express();
-var server = app.listen(3000);
+// var server = app.listen(3000);
+
+// HEROKU ONLY
+var port = process.env.PORT || 3000
+var server = app.listen(port);
+
 
 app.use(express.static('public'));
 
