@@ -1,6 +1,11 @@
 // FOUR
 var socket;
 
+// SIX
+var redButton;
+var greenButton;
+var mycolor = color('blue');
+
 function setup() {
   createCanvas(400, 400);
   background('red');
@@ -9,14 +14,20 @@ function setup() {
   // socket = io.connect('http://localhost:3000')
 
   // HEROKU ONLY
-  socket = io.connect('https://test-node-kat.herokuapp.com/')
+  socket = io.connect('https://test-node-kat.herokuapp.com/');
 
   // FIVE
   // second parameter is a callback
   socket.on('mouse', newDrawing);
+
+  // SIX
+  redButton = select('#red');
+  greenButton = select('#green');
+  redButton
 }
 
 function newDrawing(data){
+  fill(mycolor);
   ellipse(data.x, data.y, 25, 25);
 }
 
